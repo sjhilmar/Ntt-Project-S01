@@ -1,6 +1,7 @@
 package com.example.ms_bank_customer_account.controller;
 
 import com.example.ms_bank_customer_account.model.BankAccount;
+import com.example.ms_bank_customer_account.service.IBankAccountService;
 import com.example.ms_bank_customer_account.service.impl.BankAccountService;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
@@ -17,7 +18,7 @@ import reactor.core.publisher.Mono;
 public class BankAccountController {
 
     @Autowired
-    private BankAccountService service;
+    private IBankAccountService service;
 
     @GetMapping
     public Flux<BankAccount> getAllBankAccounts(){

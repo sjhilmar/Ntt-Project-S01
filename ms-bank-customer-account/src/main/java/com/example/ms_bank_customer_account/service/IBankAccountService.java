@@ -7,7 +7,7 @@ import com.example.ms_bank_customer_account.model.ClientType;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IBankAccauntService {
+public interface IBankAccountService {
 
     Flux<BankAccount> getAllBankAccounts();
     Flux<BankAccount> findByClientTypeAndAccountType(ClientType clientType, AccountType accountType);

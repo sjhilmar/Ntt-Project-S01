@@ -4,7 +4,7 @@ import com.example.ms_bank_customer_account.model.AccountType;
 import com.example.ms_bank_customer_account.model.BankAccount;
 import com.example.ms_bank_customer_account.model.ClientType;
 import com.example.ms_bank_customer_account.repository.BankAccountRepository;
-import com.example.ms_bank_customer_account.service.IBankAccauntService;
+import com.example.ms_bank_customer_account.service.IBankAccountService;
 import com.example.ms_bank_customer_account.util.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class BankAccountService implements IBankAccauntService {
+public class BankAccountService implements IBankAccountService {
     @Autowired
     private BankAccountRepository bankAccountRepository;
 

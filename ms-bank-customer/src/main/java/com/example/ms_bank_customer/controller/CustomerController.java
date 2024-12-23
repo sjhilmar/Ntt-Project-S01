@@ -2,6 +2,7 @@ package com.example.ms_bank_customer.controller;
 
 import com.example.ms_bank_customer.model.Customer;
 import com.example.ms_bank_customer.service.impl.CustomerService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Tag(name = "Customer Management", description = "Operations related to managing customers")
 @Log4j2
 @RestController
 @RequestMapping("/v1/customers")

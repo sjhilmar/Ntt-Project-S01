@@ -1,0 +1,159 @@
+openapi: 3.0.0
+info:
+  title: Transaction Service API
+  description: API para gestionar transacciones de productos bancarios.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8085/api/v1/transaction
+    description: Servidor local
+
+paths:
+  /:
+    get:
+      summary: Obtener todas las transacciones
+      operationId: getAllTransactions
+      responses:
+        '200':
+          description: Lista de todas las transacciones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+    post:
+      summary: Crear una nueva transacción
+      operationId: createTransaction
+      requestBody:
+        description: Datos de la nueva transacción
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+      responses:
+        '201':
+          description: Transacción creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /product/{productId}:
+    get:
+      summary: Obtener transacciones por ID de producto
+      operationId: getTransactionsByProductId
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de todas las transacciones para un producto específico
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+        '404':
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /{id}:
+    put:
+      summary: Actualizar una transacción por ID
+      operationId: updateTransaction
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados de la transacción
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+      responses:
+        '200':
+          description: Transacción actualizada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Transacción no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar una transacción por ID
+      operationId: deleteTransaction
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Transacción eliminada exitosamente
+        '404':
+          description: Transacción no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "5f8f8c44e3c1a2b1b8b2c8c8"
+        productId:
+          type: string
+          example: "123456"
+        productType:
+          type: string
+          enum: [CUENTA_BANCARIA, CREDITO, TARJETA_CREDITO]
+          example: "CUENTA_BANCARIA"
+        transactionType:
+          type: string
+          enum: [DEPOSITO, RETIRO, PAGO, CONSUMO]
+          example: "DEPOSITO"
+        amount:
+          type: number
+          format: double
+          example: 1000.00
+        transactionDate:
+          type: string
+          format: date-time
+          example: "2024-12-23T12:34:56"
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Transacción no encontrada"

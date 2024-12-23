@@ -1,0 +1,112 @@
+openapi: 3.0.1
+info:
+  title: Credit Product Service API
+  description: API for managing customer credit products
+  version: 1.0.0
+servers:
+  - url: http://localhost:8083/api/v1/credit-product
+paths:
+  /:
+    get:
+      summary: Get all credit products
+      operationId: getAllCreditProducts
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CreditProduct'
+    post:
+      summary: Create a new credit product
+      operationId: createCreditProduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreditProduct'
+      responses:
+        '201':
+          description: Credit product created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditProduct'
+        '409':
+          description: Conflict
+  /{id}:
+    get:
+      summary: Get credit product by ID
+      operationId: getCreditProductById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditProduct'
+        '404':
+          description: Credit product not found
+    put:
+      summary: Update credit product by ID
+      operationId: updateCreditProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreditProduct'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditProduct'
+        '404':
+          description: Credit product not found
+    delete:
+      summary: Delete credit product by ID
+      operationId: deleteCreditProductById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+
+components:
+  schemas:
+    CreditProduct:
+      type: object
+      properties:
+        id:
+          type: string
+        productName:
+          type: string
+        productType:
+          type: string
+        interestRate:
+          type: number
+        creditLimit:
+          type: number
+        customerId:
+          type: string

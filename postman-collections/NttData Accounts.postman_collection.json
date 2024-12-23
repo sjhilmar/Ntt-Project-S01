@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "9bcb3b1b-c2b7-4ab6-a2df-cfee69850dab",
+		"name": "NttData Accounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20064556"
+	},
+	"item": [
+		{
+			"name": "Find All Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Account by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/bank-account/6768b3b82e70ce28cf62afb6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6768b3b82e70ce28cf62afb6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 258,\r\n    \"accountNumber\": \"3333-4444-4444-4444\",\r\n    \"accountHolderName\": \"Antonia Valverde\",\r\n    \"balance\": 1800.5,\r\n    \"authorizedSigners\": [],\r\n    \"holders\": [],\r\n    \"accountType\": \"AHORRO\",\r\n    \"clientType\": \"PERSONAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"customerId\": \"1245\",\r\n        \"accountNumber\": \"3333-4444-4444-4444\",\r\n        \"accountHolderName\": \"Sergio Jhilmar\",\r\n        \"balance\": 1800.5,\r\n        \"authorizedSigners\": [\r\n            \"ABDC\"\r\n        ],\r\n        \"holders\": [\r\n            \"Sergio Jhilmar\"\r\n        ],\r\n        \"accountType\": \"AHORRO\",\r\n        \"clientType\": \"PERSONAL\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/v1/bank-account/6768d7aea1f1fb37c55d2357",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6768d7aea1f1fb37c55d2357"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/bank-account/6768d062b1e6294f4e5870f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6768d062b1e6294f4e5870f5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

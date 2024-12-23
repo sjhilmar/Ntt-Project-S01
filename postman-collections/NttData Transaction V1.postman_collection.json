@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "08615613-9094-4b5c-b689-857afec7c8ae",
+		"name": "NttData Transaction V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20064556"
+	},
+	"item": [
+		{
+			"name": "Find All Account Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Account by Id Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/bank-account/6768b3b82e70ce28cf62afb6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6768b3b82e70ce28cf62afb6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Accounts Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 2,\r\n    \"accountNumber\": \"3333-5555-8888-4444\",\r\n    \"accountHolderName\": \"Dayana perez\",\r\n    \"balance\": 1800.5,\r\n    \"authorizedSigners\": [],\r\n    \"holders\": [],\r\n    \"accountType\": \"PLAZOFIJO\",\r\n    \"clientType\": \"PERSONAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 2,\r\n    \"accountNumber\": \"3333-5555-8888-4444\",\r\n    \"accountHolderName\": \"Dayana Perez Quico\",\r\n    \"balance\": 1800.5,\r\n    \"authorizedSigners\": [],\r\n    \"holders\": [],\r\n    \"accountType\": \"PLAZOFIJO\",\r\n    \"clientType\": \"PERSONAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/bank-account/6769c08e6eae837522b48c53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6769c08e6eae837522b48c53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/bank-account/6769c0896eae837522b48c52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"6769c0896eae837522b48c52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Credits Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/credit-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"credit-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Credit by Id Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/credit-product/6768f4214b30044bef0199c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"credit-product",
+						"6768f4214b30044bef0199c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Credit Product Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"005\",\r\n    \"accountHolderName\": \"Jhilmar\",\r\n    \"creditAmount\": 1500.0,\r\n    \"authorizedSigners\": [],\r\n    \"holders\": [],\r\n    \"creditType\": \"TARJETACREDITO\",\r\n    \"clientType\": \"PERSONAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/credit-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"credit-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Credit Products Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"customerId\": \"005\",\r\n    \"accountHolderName\": \"Jhilmar Alvarez\",\r\n    \"creditAmount\": 1500.0,\r\n    \"authorizedSigners\": [],\r\n    \"holders\": [],\r\n    \"creditType\": \"TARJETACREDITO\",\r\n    \"clientType\": \"PERSONAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/credit-product/6769c4036eae837522b48c54",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"credit-product",
+						"6769c4036eae837522b48c54"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Credit Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/credit-product/6768f4984b30044bef0199c8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"credit-product",
+						"6768f4984b30044bef0199c8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"6769c4036eae837522b48c54\",\r\n  \"productType\": \"CREDITO\",\r\n  \"transactionType\": \"PAGO\",\r\n  \"amount\": 50,\r\n  \"transactionDate\": \"2024-12-23T12:34:56\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Transaction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"productId\": \"6769c0176eae837522b48c4e\",\r\n    \"productType\": \"CUENTABANCARIA\",\r\n    \"transactionType\": \"DEPOSITO\",\r\n    \"amount\": 1500,\r\n    \"transactionDate\": \"2024-12-23T15:33:35.5304506\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/v1/transaction/6769c91fd0de16144cdb8f09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"6769c91fd0de16144cdb8f09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/transaction/6769c91fd0de16144cdb8f09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"6769c91fd0de16144cdb8f09"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
